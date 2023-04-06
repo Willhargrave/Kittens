@@ -13,4 +13,9 @@ class KittensController < ApplicationController
   end
   def delete
   end
+
+  private
+  def kitten_params
+    params.require(:kitten).permit(:name, :cuteness, :age, :softness)
+  end
 end
