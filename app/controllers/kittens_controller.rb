@@ -5,4 +5,8 @@ class KittensController < ApplicationController
   def show
     @kitten = Kitten[:id]
   end
+  def new
+  end
+  def edit
+  end
 end
