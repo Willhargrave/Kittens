@@ -11,7 +11,11 @@ class KittensController < ApplicationController
   def edit
     @kitten = Kitten.find(params[:id])
   end
-  def delete
+  def destroy
+    @kitten = Kitten.find(params[:id])
+    @kitten.destroy
+    
+    redirect_to root_path, status: :see_other, notice: "Successfully deleted kitten!"
   end
 
   private
