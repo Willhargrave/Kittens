@@ -3,13 +3,13 @@ class KittensController < ApplicationController
     @kittens = Kitten.all
   end
   def show
-    @kitten = Kitten[:id]
+    @kitten = Kitten.find(params[:id])
   end
   def new
     @kitten = Kitten.new
   end
   def edit
-    
+    @kitten = Kitten.find(params[:id])
   end
   def delete
   end
