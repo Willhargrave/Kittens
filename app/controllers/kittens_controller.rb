@@ -3,12 +3,15 @@ class KittensController < ApplicationController
     @kittens = Kitten.all
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @users }
-      format.json { render :json => @users }
+      format.json { render :json => @kittens }
     end
   end
   def show
     @kitten = Kitten.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @kitten }
+    end
   end
   def new
     @kitten = Kitten.new
